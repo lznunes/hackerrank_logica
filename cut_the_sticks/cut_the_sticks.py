@@ -19,7 +19,7 @@ def cutTheSticks(arr):
 
 if __name__ == '__main__':
     current_directory = os.getcwd()
-    file_path = os.path.join(current_directory, 'cut_the_sticks.txt')
+    file_path = os.path.join(current_directory, 'cut_the_sticks/cut_the_sticks.txt')
     arr = list(map(int, input().rstrip().split()))
     result = cutTheSticks(arr)
     
