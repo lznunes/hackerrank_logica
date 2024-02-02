@@ -33,16 +33,19 @@ if __name__ == '__main__':
     with open(file_path_input, 'r', encoding="utf-8") as fptr:
         # Read the number of test cases
         num_test_cases = int(fptr.readline())
+        with open(file_path_output, 'w', encoding="utf-8") as fptr_2:
 
-        # Process each test case
-        for _ in range(num_test_cases):
-            # Read parameters for each test case
-            params = list(map(int, fptr.readline().split()))
-            total_money, chocolate_cost, wrappers_needed = params
+            # Process each test case
+            for _ in range(num_test_cases):
+                # Read parameters for each test case
+                params = list(map(int, fptr.readline().split()))
+                total_money, chocolate_cost, wrappers_needed = params
 
-            # Calculate and print the result for the current test case
-            result = chocolate_feast(total_money, chocolate_cost, wrappers_needed)
-            print(result)
+                # Calculate and print the result for the current test case
+                result = chocolate_feast(total_money, chocolate_cost, wrappers_needed)
+                fptr_2.writelines(str(result) + '\n')
+            
 
     # Close the file
     fptr.close()
+    fptr_2.close()
